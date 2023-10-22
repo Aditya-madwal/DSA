@@ -9,5 +9,7 @@ public class linearSearch {
         } else {
             // finding the item in the array via for loop
         }
+        return 0;
     }
+
 }
