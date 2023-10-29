@@ -54,6 +54,17 @@ class LL:
         prev.next = new_node
         new_node.next = temp
 
+    def delete_node(self, index):
+        if index == self.size - 1:
+            self.get(self.size-1).next = None
+            self.tail = self.get(self.size-1)
+            self.size -= 1
+            return
+
+        self.get(index-1).next = self.get(index-1).next.next
+        self.size -= 1
+        return
+
     def get(self, index) -> Node:
         node = self.head
         for i in range(0, index):
@@ -83,6 +94,8 @@ LL1.insert_at_end(908)
 LL1.insert_at_end(4521)
 
 LL1.insert_at_pos("aditya", 3)
+LL1.delete_node(7)
+LL1.delete_node(3)
 
 print(LL1.size)
 print(f"the head is {LL1.head.data}")
